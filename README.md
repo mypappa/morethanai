@@ -44,6 +44,8 @@ Running code in a **local (on my computer) environment** vs. in an **online envi
 
 **Davinci:** a name that OpenAI has given to SPECIFIC configurations of their language models (a very capable and large variation) e.g. GPT-3 and GPT-4 are having these configurations.
 
+<br> 
+
 #### We installed: 
 
 **OpenAI** (python library): needed to access the OpenAI APIs (interfaces). When having an account to use ChatGPT for example, I can ask for my API key which I need to integrate OpenAI services into my system. In OpenAI I have “tokens” (because it is not open-source anymore) that I need to use the API. If my tokes are used up I can only buy new ones. 
