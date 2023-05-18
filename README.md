@@ -8,7 +8,6 @@ we wonder..
 
 this project aims to materialise and embody the ways in which artificial intelligences (AI) affect the creation of stories and how human inputs together with nonhuman processing (AI) give us a more-than-human outcome.   
 
-
 ## hands-on  
 we will create an interface that records speech, transcribes it to text and feeds it into a language model (which in this case is GPT). Then the AI starts generating a story. The story always ends with a question to the participants for new human input. The answer is then integrated to the story from the AI, live-projected and ends with another question. this continues until we reach an x amount of words
 
@@ -18,7 +17,7 @@ knowing relatively nothing about coding and how to build digital interfaces was 
 ### technicalities
 we want to enable a human and an AI (our vision a visual and text generating AI) to collaborate on writing a fictional story. We use a “LangChain” framework for developing applications that deal with language models, we use a “GPT” language model by *“OpenAI”* with the *“davinci”* configuration, we use the open-source web framework *“Flask”* that is written in *“python”* to make our application a responsive webpage and we use *“SpeechRecognition”* which is a pre-built interface of *“javascript”* to transform audio (speech) to text. In our coding environment we use *python*, *javascript*, *HTML* and *CSS*. We work with open-source software and have our codes in a repo for everyone to access. 
 
-## what we came across and we learned to understand: 
+### what we came across and we learned to understand: 
 Interface: term used in programming; describes a set of rules that define how different software components (will) interact with each other. It is the “cover” / the interface allows the user to interact with software, without exposing the internal workings of the underlying code.
 
 **API:** Application Programming Interface, so this speaks specifically about how applicatioins communicate with each other. API are offered by platform like facebook, services like paypal, or providers like googlemaps to allow cross-linkages and integration in bigger (software) systems. 
