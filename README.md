@@ -1,4 +1,4 @@
-# morethanai  
+# more thAn I  
 an interactive installation where humans and artificial intelligences collaborate in unprecedented ways to co-create a story.  
 
 ## concept  
