@@ -1,0 +1,28 @@
+<!doctype html>
+<head>
+	<title>questions</title>
+	<link href="/static/base.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet"> 
+</head>
+<body>
+  <h2 class="mt-4">Questions</h2>
+  <p id="question">{{web_question}}</p>
+  <div class="p-3" style="border: 1px solid gray; height: 100px; border-radius: 8px;">
+      <span id="final"></span>
+      <span id="interim"></span>
+  </div>
+  <div class="mt-4">
+      <button class="btn btn-success" id="start">Start</button>
+      <button class="btn btn-danger" id="stop">Send</button>
+  </div>
+  </div>
+
+  <script src="/static/speechRecognition.js"></script>
+  <script>
+    if ("webkitSpeechRecognition" in window) {
+
+    } else {
+      console.log("Speech Recognition Not Available")
+    }
+  </script>
+</body>

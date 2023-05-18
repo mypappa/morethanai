@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>projection</title>
+	<link href="/static/base.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet"> 
+</head>
+
+  
+<body>
+  
+  <h1>story context</h1>
+  	<p id="past_stories"></p>
+	<p id="story" style="color: blue"><b>{{web_story}}</b></p>
+
+<script>
+	function get_data() {
+		fetch('/get_story', {
+			method: 'GET'
+		})
+		.then(response => response.json())
+		.then(response => {
+			document.getElementById("past_stories").innerText = ""
+			response.story.forEach((sub_story, index, all_stories) => {
+				if(index === all_stories.length-1) {
+					document.getElementById("story").innerText = sub_story
+				} else {
+					document.getElementById("past_stories").innerText += "" + sub_story
+				}
+			});
+			window.scrollTo(0, document.body.scrollHeight);
+		})
+
+		setTimeout(get_data, 2000);
+	}
+	get_data();
+</script>
+</body>
+
+</html>
