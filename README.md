@@ -124,7 +124,7 @@ print("-----------------------------------")
 print(story[idx_question:])
 print("-----------------------------------")
 ```
-### link to home webpage
+### link to the story webpage
 ```
 @app.route('/', methods = ['GET'])
 def story_page():
@@ -137,13 +137,12 @@ def get_story():
   global story_memory
   return {"story": story_memory} 
 ```
-### link to question webpage
+### link to the question webpage
 ```
 @app.route('/questions', methods = ['GET'])  
 def questions_page():
   global current_question
   return render_template('questions.html', web_question=current_question)
-
 
 @app.route('/questions', methods = ['POST'])
 def post_answer():
@@ -154,7 +153,10 @@ def post_answer():
   answer = re.sub(r"[\n\t\s]*", "", answer)
   print("answer is: ", answer)
 ```
+
 ### loop / closing prompt
+now we wanted to create a loop which would run constantly until we want it to stop. Therefore we created the message "magic word" which would activate the 'closing prompt' and end the story. 
+
 ```
   if answer.lower() == "magicword":
     closing_prompt = "end the story in a creative and beautiful way in nomore than 6 lines. Do not end with a question"
@@ -173,6 +175,8 @@ def post_answer():
 ```
 
 ### text files
+in order to store separately all the text generated, we made three files: the questions (by the AI), the answers (by the humans) and the story (by the collaboration of AIs and humans).
+
 ```
  q = open("questionmemory.txt", "at")
   q.write(new_question)
