@@ -56,6 +56,96 @@ Running code in a **local (on my computer) environment** vs. in an **online envi
 
 **SpeechRecognition** (library): is a javascript library that serves as a Web Speech API (interface). It enable to record, detect, and transcribe audio (speech) into written text. 
 
+### proof of concept
+once we had formed the idea and were able to analyse the process we had to follow, we started testing if and how this communication with the AIs could work. Using the chat GTP we wrote various prompts until we managed to get the output we envisioned. 
+
+However, the chat GTP already has many more functions built-in like the memory and the chat interface, so we were testing the prompts in an 'ideal' environment..
+
+our first prompt: 
+*You are an AI creating a story on the topic of "more than human communication" . The story never ends.  Start writing a fictional scenario, but only a short beginning of it,  that revolves around the topic of 'more than human' communication. Once you have it, ask a question to the audience (that are not part of the story) about the plot that is necessary for the story to continue. the answer you will get should be intergrated in the script and then will trigger the next question from you to keep going*  
+
+## the code
+
+### imports
+```
+import re
+from flask import Flask, render_template, request, url_for
+import os
+os.environ["OPENAI_API_KEY"] = "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"
+
+from langchain.llms import OpenAI
+from langchain.chains import ConversationChain
+from langchain.memory import ConversationBufferMemory
+```
+### objects
+```
+# Lang Chain Objects - link to OpenAI
+llm = OpenAI(temperature=0.5)
+conversation = ConversationChain(
+    llm=llm, 
+    verbose=False, 
+    memory=ConversationBufferMemory()
+)
+
+# Flask Objects
+app = Flask(  # Create a flask app
+  __name__,
+  template_folder='templates',  # Name of html file folder
+  static_folder='static'  # Name of directory for static files
+)
+```
+### initial prompt
+```
+initial_promt = "you are an AI creating a story in collaboration with humans. The topic of the story is 'a romantic story between a humanoid and a plant'. The story never ends but is a cumulative process of human input and AI integration of the input. Start writing a short fictional story of maximum 5 lines and finish by asking only one concrete question of maximum 3 lines to the humans (that are not part of the story) about important information for the plot to continue the storyline. This question starts with the words: \"Dear collaborators\".... Make this a loop. then you integrate the answer you get and rewrite the story accordingly."
+```
+### writing the story
+```
+# setting variables
+story = conversation.predict(input=initial_promt) 
+idx_question = story.find('Dear collaborators')
+
+# merging stories
+story_memory = []
+did_the_story_end = False
+
+story_memory.append(story[:idx_question])
+current_question = story[idx_question:]
+
+print("answer to initial prompt")
+print(story)
+print("-----------------------------------")
+print(story[idx_question:])
+print("-----------------------------------")
+```
+### link to home webpage
+```
+
+```
+### link to question webpage
+```
+
+```
+### loop / closing prompt
+```
+
+```
+
+ q = open("questionmemory.txt", "at")
+  q.write(new_question)
+  q.write("\n")
+  q.close()
+
+  s = open("storymemory.txt", "at")
+  s.write(new_story)
+  s.write("\n")
+  s.close()
+
+  a = open("answermemory.txt", "at")
+  a.write(answer)
+  a.write("\n")
+  a.close()
+```
+
 ## References:
 
 • [replit](https://replit.com/~ ); allows programming code in collaboration in an online environment
