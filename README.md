@@ -3,9 +3,13 @@
 
 an interactive installation where humans and artificial intelligences collaborate in unprecedented ways to co-create a story.
 
-check out here: <br> [question page](https://more-than-i--stella-dikmans.repl.co/](https://more-than-i--stella-dikmans.repl.co/questions) 
+check out here:
 <br> 
-and the [story page](https://more-than-i--stella-dikmans.repl.co/) 
+the [story page](https://more-than-i--stella-dikmans.repl.co/) 
+<br> 
+and the [questions page](https://more-than-i--stella-dikmans.repl.co/questions) 
+
+     
 
      
 
