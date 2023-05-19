@@ -119,17 +119,53 @@ print("-----------------------------------")
 ```
 ### link to home webpage
 ```
+@app.route('/', methods = ['GET'])
+def story_page():
+  global story_memory
+  return render_template('story.html', web_story=story_memory)
 
+
+@app.route('/get_story', methods = ['GET'])
+def get_story():
+  global story_memory
+  return {"story": story_memory} 
 ```
 ### link to question webpage
 ```
+@app.route('/questions', methods = ['GET'])  
+def questions_page():
+  global current_question
+  return render_template('questions.html', web_question=current_question)
 
+
+@app.route('/questions', methods = ['POST'])
+def post_answer():
+  global story_memory, did_the_story_end
+  
+  content = request.json
+  answer = content['answer']
+  answer = re.sub(r"[\n\t\s]*", "", answer)
+  print("answer is: ", answer)
 ```
 ### loop / closing prompt
 ```
+  if answer.lower() == "magicword":
+    closing_prompt = "end the story in a creative and beautiful way in nomore than 6 lines. Do not end with a question"
+    story = conversation.predict(input=closing_prompt)
+    did_the_story_end = True
+  else:
+    loop_prompt = (
+        f"continue the existing story based on this answer: {answer}. the continuation of the story will again end with a question that starts with the words: 'Dear collaborators'. Make this continuation not longer than 4 lines. then again ask a new question awaiting the answer to let them direct the storyline and so on"  
+    )
+    story = conversation.predict(input=loop_prompt)
+  
+  idx_question = story.find('Dear collaborators')
 
+  new_story = story[:idx_question]
+  new_question = story[idx_question:]
 ```
-
+### text files
+```
  q = open("questionmemory.txt", "at")
   q.write(new_question)
   q.write("\n")
