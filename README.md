@@ -76,7 +76,7 @@ we use
 import re
 from flask import Flask, render_template, request, url_for
 import os
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "YourPersonalOpenAIKey"
 
 from langchain.llms import OpenAI
 from langchain.chains import ConversationChain
@@ -86,6 +86,9 @@ from langchain.memory import ConversationBufferMemory
 ### creating the folders, files and the linksages between the files
 - we define our language model and set its creativity level (programmed in temperature) we want it to have(e.g. standard in ChatGPT is temperature=0.7)
 - we create folders in which we create HTML files to design and style the webpages
+
+<img width="208" alt="setup" src="https://github.com/mypappa/morethanai/assets/115219314/59559c72-e8f0-4812-b3bc-92238ffcf396">
+
 
 ```
 # Lang Chain Objects - link to OpenAI
