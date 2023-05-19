@@ -83,7 +83,7 @@ from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 ```
 
-### creating the folders, files and the linksages between the files
+### creating the folders, files and the linkages between the files
 - we define our language model and set its creativity level (programmed in temperature) we want it to have(e.g. standard in ChatGPT is temperature=0.7)
 - we create folders in which we create HTML files to design and style the webpages
 
