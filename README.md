@@ -61,7 +61,7 @@ once we had formed the idea and were able to analyse the process we had to follo
 
 However, the ChatGPT is an application of the GPT language model so it already has many more functions built-in like the memory and the chat interface. This meant that we tested the prompts in an 'ideal' environment which we then had to rebuild manually..
 
-our first prompt: 
+**our first prompt**   
 *You are an AI creating a story on the topic of "more than human communication" . The story never ends.  Start writing a fictional scenario, but only a short beginning of it,  that revolves around the topic of 'more than human' communication. Once you have it, ask a question to the audience (that are not part of the story) about the plot that is necessary for the story to continue. the answer you will get should be intergrated in the script and then will trigger the next question from you to keep going*  
 
 ## the code
