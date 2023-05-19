@@ -68,6 +68,9 @@ Running code in a **local (on my computer) environment** vs. in an **online envi
 
 **SpeechRecognition** (library): is a javascript library that serves as a Web Speech API (interface). It enable to record, detect, and transcribe audio (speech) into written text. 
 
+### workflow diagram
+
+<img src="[https://github.com/mypappa/morethanai/assets/115214510/54f7453d-3b95-4400-b2c7-ac3b2d376cc3] width="600">  
 ### proof of concept
 once we had formed the idea and were able to analyse the process we had to follow, we started testing if and how this communication with the AIs could work. Using the ChatGPT we wrote various prompts until we managed to get the output we envisioned. 
 
