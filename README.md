@@ -57,16 +57,20 @@ Running code in a **local (on my computer) environment** vs. in an **online envi
 **SpeechRecognition** (library): is a javascript library that serves as a Web Speech API (interface). It enable to record, detect, and transcribe audio (speech) into written text. 
 
 ### proof of concept
-once we had formed the idea and were able to analyse the process we had to follow, we started testing if and how this communication with the AIs could work. Using the chat GTP we wrote various prompts until we managed to get the output we envisioned. 
+once we had formed the idea and were able to analyse the process we had to follow, we started testing if and how this communication with the AIs could work. Using the ChatGPT we wrote various prompts until we managed to get the output we envisioned. 
 
-However, the chat GTP already has many more functions built-in like the memory and the chat interface, so we were testing the prompts in an 'ideal' environment..
+However, the ChatGPT is an application of the GPT language model so it already has many more functions built-in like the memory and the chat interface. This meant that we tested the prompts in an 'ideal' environment which we then had to rebuild manually..
 
 our first prompt: 
 *You are an AI creating a story on the topic of "more than human communication" . The story never ends.  Start writing a fictional scenario, but only a short beginning of it,  that revolves around the topic of 'more than human' communication. Once you have it, ask a question to the audience (that are not part of the story) about the plot that is necessary for the story to continue. the answer you will get should be intergrated in the script and then will trigger the next question from you to keep going*  
 
 ## the code
 
-### imports
+### importing libraries 
+we used 
+- 'flask' library to make the python code a web application and create routes to the URLs
+- 'langchain' library through which made the connection the OpenAI and created the storage for our conversations
+
 ```
 import re
 from flask import Flask, render_template, request, url_for
@@ -77,16 +81,15 @@ from langchain.llms import OpenAI
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 ```
-### objects
+### creating the files links
 ```
 # Lang Chain Objects - link to OpenAI
-llm = OpenAI(temperature=0.5)
+llm = OpenAI(temperature=0.5) # adjusting the creativity level
 conversation = ConversationChain(
     llm=llm, 
     verbose=False, 
     memory=ConversationBufferMemory()
 )
-
 # Flask Objects
 app = Flask(  # Create a flask app
   __name__,
@@ -94,11 +97,15 @@ app = Flask(  # Create a flask app
   static_folder='static'  # Name of directory for static files
 )
 ```
+
 ### initial prompt
+When we were experimenting with the ChatGPT we only had to write one single prompt where we could include all the process. But when we built this manually, we had to 'break' the prompt it into three different pieces: the initial prompt, which runs only once in the beginning, the 'loop prompt' which is the one looping, until we reach a good amount of text when we have the 'closing prompt' that ends the story.
+
 ```
 initial_promt = "you are an AI creating a story in collaboration with humans. The topic of the story is 'a romantic story between a humanoid and a plant'. The story never ends but is a cumulative process of human input and AI integration of the input. Start writing a short fictional story of maximum 5 lines and finish by asking only one concrete question of maximum 3 lines to the humans (that are not part of the story) about important information for the plot to continue the storyline. This question starts with the words: \"Dear collaborators\".... Make this a loop. then you integrate the answer you get and rewrite the story accordingly."
 ```
 ### writing the story
+
 ```
 # setting variables
 story = conversation.predict(input=initial_promt) 
