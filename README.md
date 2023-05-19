@@ -1,7 +1,7 @@
 # more thAn I  
 an interactive installation where humans and artificial intelligences collaborate in unprecedented ways to co-create a story.  
-![poster two](https://github.com/mypappa/morethanai/assets/115214510/54f7453d-3b95-4400-b2c7-ac3b2d376cc3)
 
+<img src="https://github.com/mypappa/morethanai/assets/115214510/54f7453d-3b95-4400-b2c7-ac3b2d376cc3"  width="600" height="300">
 ## concept  
 we wonder..  
 - What happens if we revert The roles between the users and the servers?  
