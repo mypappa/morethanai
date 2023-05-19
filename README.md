@@ -164,6 +164,7 @@ def post_answer():
   new_story = story[:idx_question]
   new_question = story[idx_question:]
 ```
+
 ### text files
 ```
  q = open("questionmemory.txt", "at")
@@ -180,6 +181,19 @@ def post_answer():
   a.write(answer)
   a.write("\n")
   a.close()
+```
+
+### story end
+```
+  story_memory.append(new_story)
+  if did_the_story_end is True:
+    return {"question": "The story has ended"}
+  return {"question": new_question}
+
+
+if __name__ == "__main__":  
+  
+  app.run(host='0.0.0.0',  port=80, debug=True)
 ```
 
 ## References:
