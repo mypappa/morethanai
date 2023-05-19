@@ -67,9 +67,10 @@ However, the ChatGPT is an application of the GPT language model so it already h
 ## the code
 
 ### importing libraries 
-we used 
-- 'flask' library to make the python code a web application and create routes to the URLs
-- 'langchain' library through which made the connection the OpenAI and created the storage for our conversations
+we use 
+- a 'flask' library to make the python code a web application and create routes to the URLs
+- a 'langchain' library through which enables the connection and exchange with OpenAI (and creates the storage for our conversations?)
+- a 'OpenAI' library that has its API integrated but which is to be activated with a personalised key (your OpenAI API key)
 
 ```
 import re
@@ -81,7 +82,11 @@ from langchain.llms import OpenAI
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 ```
-### creating the files links
+
+### creating the folders, files and the linksages between the files
+- we define our language model and set its creativity level (programmed in temperature) we want it to have(e.g. standard in ChatGPT is temperature=0.7)
+- we create folders in which we create HTML files to design and style the webpages
+
 ```
 # Lang Chain Objects - link to OpenAI
 llm = OpenAI(temperature=0.5) # adjusting the creativity level
@@ -99,12 +104,24 @@ app = Flask(  # Create a flask app
 ```
 
 ### initial prompt
-When we were experimenting with the ChatGPT we only had to write one single prompt where we could include all the process. But when we built this manually, we had to 'break' the prompt it into three different pieces: the initial prompt, which runs only once in the beginning, the 'loop prompt' which is the one looping, until we reach a good amount of text when we have the 'closing prompt' that ends the story.
+When we were experimenting with the ChatGPT we only had to write one single prompt where we could include all the process. But when building this manually, we have to 'break' the prompt into three different pieces: 
+- the initial prompt, which runs only once in the beginning, 
+- the 'loop prompt' which is the one that is being repeated until we reach a good amount of text, 
+- and a 'closing prompt' that ends the story.
+
+*note that these promts are integrated in the final code in different positions*
 
 ```
 initial_promt = "you are an AI creating a story in collaboration with humans. The topic of the story is 'a romantic story between a humanoid and a plant'. The story never ends but is a cumulative process of human input and AI integration of the input. Start writing a short fictional story of maximum 5 lines and finish by asking only one concrete question of maximum 3 lines to the humans (that are not part of the story) about important information for the plot to continue the storyline. This question starts with the words: \"Dear collaborators\".... Make this a loop. then you integrate the answer you get and rewrite the story accordingly."
+
+loop_prompt = (
+        f"continue the existing story based on this answer: {answer}. the continuation of the story will again end with a question that starts with the words: 'Dear collaborators'. Make this continuation not longer than 4 lines. then again ask a new question awaiting the answer to let them direct the storyline and so on"  
+    )
+    
+closing_prompt = "end the story in a creative and beautiful way in nomore than 6 lines. Do not end with a question"
 ```
 ### writing the story
+in this part we set the variables that will define the outputs. We also define that within the written text, the words 'Dear collaborators' are important keywords that will indicate points for slitting the text and direct different parts to different routes. <br> We use the the function *append* to make sure that every new input is *added* to the old one and because we built a *memory function*, it will consider the context from before. <br> <br> The *print* part is a part that only we ill see in the console of our terminal. It is not necessary for the working of the system but helps us to understand wherre we are and recognize fast if things are broken. It will print the story, detect the question that starts with 'dear collabrators' and will put this into a seperate section. 
 
 ```
 # setting variables
@@ -125,6 +142,8 @@ print(story[idx_question:])
 print("-----------------------------------")
 ```
 ### link to the story webpage
+Here we define the specified route that links HTML to the flask-website. <br> we create two websites that are linked to two different HTML files. One for the story and one for the questions.
+ 
 ```
 @app.route('/', methods = ['GET'])
 def story_page():
@@ -138,6 +157,7 @@ def get_story():
   return {"story": story_memory} 
 ```
 ### link to the question webpage
+The question code asks for a little bit more attention because we want that there is always only one question and this has to be the most actual one. So we always need to replace the question after it has been answered with the new accuring questions. <br> <br> Here we also define what happens that if the function *did_the_story_end* is in working, the answer is cleared of all blank spaces and sets all letters to small. This allows the system to recognize later the word which initiailzes the ending promt - *see next paragraph*. 
 ```
 @app.route('/questions', methods = ['GET'])  
 def questions_page():
@@ -155,7 +175,7 @@ def post_answer():
 ```
 
 ### loop / closing prompt
-now we wanted to create a loop which would run constantly until we want it to stop. Therefore we created the message "magic word" which would activate the 'closing prompt' and end the story. 
+we create a loop that runs constantly until we actively stop it. <br> <br> only if the systen detects the answer "magicword" we activate a 'closing prompt' and break the loop and with that end the code. To restart, we have to run the code again from the beginning.  
 
 ```
   if answer.lower() == "magicword":
@@ -174,8 +194,27 @@ now we wanted to create a loop which would run constantly until we want it to st
   new_question = story[idx_question:]
 ```
 
+### story end
+This is how the answer to the closing promt is being added to the story in the story webpage and how there appears the sentence *The story has ended* instead of a new question in the question webpage. <br> <br> The last line is just a definition of running a weppage online (with flask). It checks if the current module is the *main module* that is being executed. The *port=80* is s standart port for HTTP traffic and specifies whee the application should listen for incoming requests.
+```
+  story_memory.append(new_story)
+  if did_the_story_end is True:
+    return {"question": "The story has ended"}
+  return {"question": new_question}
+
+
+if __name__ == "__main__":  
+  
+  app.run(host='0.0.0.0',  port=80, debug=True)
+```
+
+
 ### text files
-in order to store separately all the text generated, we made three files: the questions (by the AI), the answers (by the humans) and the story (by the collaboration of AIs and humans).
+in order to store separately all the text generated, we made three files: 
+- the questions (by the AI), 
+- the answers (by the humans) 
+- and the story (by the collaboration of AIs and humans).
+they are stored in simple text files in no specific folder
 
 ```
  q = open("questionmemory.txt", "at")
@@ -192,19 +231,6 @@ in order to store separately all the text generated, we made three files: the qu
   a.write(answer)
   a.write("\n")
   a.close()
-```
-
-### story end
-```
-  story_memory.append(new_story)
-  if did_the_story_end is True:
-    return {"question": "The story has ended"}
-  return {"question": new_question}
-
-
-if __name__ == "__main__":  
-  
-  app.run(host='0.0.0.0',  port=80, debug=True)
 ```
 
 ## References:
