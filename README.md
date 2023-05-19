@@ -123,8 +123,8 @@ loop_prompt = (
     
 closing_prompt = "end the story in a creative and beautiful way in nomore than 6 lines. Do not end with a question"
 ```
-### writing the story
-in this part we set the variables that will define the outputs. We also define that within the written text, the words 'Dear collaborators' are important keywords that will indicate points for slitting the text and direct different parts to different routes. <br> We use the the function *append* to make sure that every new input is *added* to the old one and because we built a *memory function*, it will consider the context from before. <br> <br> The *print* part is a part that only we ill see in the console of our terminal. It is not necessary for the working of the system but helps us to understand wherre we are and recognize fast if things are broken. It will print the story, detect the question that starts with 'dear collabrators' and will put this into a seperate section. 
+### setting up the seperation between the story and the questions
+in this part we set the variables that will define the outputs. We also define that within the written text, the words 'Dear collaborators' are important keywords that will indicate points for splitting the text and direct different parts to different routes. <br> We use the the function **append** to make sure that every new input is **added** to the old one and because we built a **memory function**, it will consider the context from before. <br> <br> The **print** part is a part that only we ill see in the console of our terminal. It is not necessary for the working of the system but helps us to understand wherre we are and recognize fast if things are broken. It will print the story, detect the question that starts with 'dear collabrators' and will put this into a seperate section. 
 
 ```
 # setting variables
@@ -144,7 +144,7 @@ print("-----------------------------------")
 print(story[idx_question:])
 print("-----------------------------------")
 ```
-### link to the story webpage
+### link it to the story webpage
 Here we define the specified route that links HTML to the flask-website. <br> we create two websites that are linked to two different HTML files. One for the story and one for the questions.
  
 ```
@@ -159,8 +159,8 @@ def get_story():
   global story_memory
   return {"story": story_memory} 
 ```
-### link to the question webpage
-The question code asks for a little bit more attention because we want that there is always only one question and this has to be the most actual one. So we always need to replace the question after it has been answered with the new accuring questions. <br> <br> Here we also define what happens that if the function *did_the_story_end* is in working, the answer is cleared of all blank spaces and sets all letters to small. This allows the system to recognize later the word which initiailzes the ending promt - *see next paragraph*. 
+### link it to the question webpage
+The question code asks for a little bit more attention because we want that there is always only one question and this has to be the most actual one. So we always need to replace the question after it has been answered with the new accuring questions. <br> <br> Here we also define what happens that if the function *did_the_story_end* is being active, the answer is cleared of all blank spaces and capital letters. It sets all letter to lowercase. This allows the system to recognize later the word which initiailzes the ending promt - *see next paragraph*. 
 ```
 @app.route('/questions', methods = ['GET'])  
 def questions_page():
@@ -178,7 +178,7 @@ def post_answer():
 ```
 
 ### loop / closing prompt
-we create a loop that runs constantly until we actively stop it. <br> <br> only if the systen detects the answer "magicword" we activate a 'closing prompt' and break the loop and with that end the code. To restart, we have to run the code again from the beginning.  
+we create a loop that runs constantly until we actively stop it. <br> <br> only if the system detects the answer "magicword" we activate a 'closing prompt' and break the loop and with that end the code. To restart, we have to run the code again from the beginning.  
 
 ```
   if answer.lower() == "magicword":
