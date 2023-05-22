@@ -56,6 +56,8 @@ Running code in a **local (on my computer) environment** vs. in an **online envi
 
 **Davinci:** a name that OpenAI has given to SPECIFIC configurations of their language models (a very capable and large variation) e.g. GPT-3 and GPT-4 are having these configurations.
 
+**Replit:** is an online IDE = interface for editing a file system. It is online and thus all files (systems) are in the cloud.
+
 <br> 
 
 #### We installed: 
