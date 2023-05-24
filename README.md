@@ -253,6 +253,88 @@ they are stored in simple text files in no specific folder
   a.close()
 ```
 
+
+## Trying locally:
+
+so in our replit environment we have installed all the packages and our codes run with a valid OpenAI API on the two flask websites. Langchain is the interconnector of the language model in our code. This means, we need the libraries: OpenAI, flask, speechRecognition, and Langchain as well in our local environment if we want to run the code locally. <br> <b>how to do that? </b> <br>
+first I create a folder no my desktop and name it (e.g. "secondtrial"). Then I open this folder in my text-editor because that is easier to handle, I use [Visual Code Studio](https://code.visualstudio.com/). In there I create excactly the same files with its contents that I have in the replic. I just copy paste everything. <i>surely there is a smarter way, probably you can just clone the whole porject but whatever</i>. Now I can try running the code by opening the termnal, directing to my folder:
+
+```
+cd desktop/secondtrial
+
+```
+and then running my python code
+
+```
+python3 main.py
+
+```
+
+but this will probably not work because the necessary libraries are not installed. To keep everything clear and ordered, I create a virtual environment for this project in which I will install only the necessary libraries and I will be sure everything is at the right place. For that I manually create a new folder in my visual code studio project and name it (e.g. "env"). It should look like this: 
+
+<img width="1187" alt="Screenshot 2023-05-24 at 21 44 48" src="https://github.com/mypappa/morethanai/assets/115219314/9d114421-4fe4-4618-9166-a953c8ee5f27">
+
+now I want to create an environment. In my terminal I direct to the new folder "env"
+
+```
+cd desktop/secondtrial/env
+
+```
+
+and then I create the environment using a [python command](https://docs.python.org/3/library/venv.html) to create a virtual environment
+
+
+```
+python3 -m venv desktop/secondtrial/env
+
+```
+
+if you open that folder now, it should have created a lot of content. But we have to <b> activate the environment </b>. 
+
+
+```
+source env/bin/activate
+
+```
+great, now in your terminal your line should have changed and start with (env) - indicating that you are actively operating within that virtual environment. 
+
+now, try running the code again: 
+
+```
+python3 main.py
+
+```
+
+and it will probably tell you it lacks libraries. So for all those that are lacking you peform the install command. Just do so, if ask for it. The terminal will tell you.
+
+```
+pip3 install flask
+
+pip3 install openai
+
+pip3 install langchain
+
+pip3 install speechrecognition
+
+...
+
+```
+
+
+now that you have installed all of them, make sure that the OpenAI API is not used at the same time in the replit or by someone else (me), and run the code:
+
+
+```
+python3 main.py
+
+```
+
+DOES IT WORK NOW??
+
+
+aaah and importantly, when you are ready quit! by hitting control c. Otherwies the code runs, the API is in use and you or me or the replit will get langchain error because the API is in ues. 
+
+
 ## References:
 
 • [replit](https://replit.com/~ ); allows programming code in collaboration in an online environment
