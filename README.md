@@ -40,7 +40,7 @@ we want to enable a human and an AI (our vision a visual and text generating AI)
 
 **LLMs:** large language models that are made to understand and generate human-like text. They are trained on large datasets to learn human languages. 
 
-**python:** programming language often used in web development and data analysis. It comes with a big set of pre-built modules and functions for a lot of tasks and has an easy system to import external libraries and frameworks for specific domains. 
+**python:** programming language often used in web development and data analysis. It comes with a big set of pre-built modules and functions for a lot of tasks and has an easy system to import external libraries and frameworks for specific domains. In the python language, Indentation is very important, and indenting incorrectly or inconsistently can cause your program to work differently from how you intended, or not work at all. 
 
 **HTML:** Hypertext Markup Language, a standard markup language used to create web pages [markup: practice of adding special annotations and tags to text to provide structure and formatting instructions]. It often creates a set of instructions that tells web browsers how to display content.
 
