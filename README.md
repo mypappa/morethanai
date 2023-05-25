@@ -338,7 +338,7 @@ aaah and importantly, when you are ready quit! by hitting control c. Otherwies t
 
 ### installing java to play with processing:
 
-for running [processing](https://py.processing.org/) in my [command line/ my own terminal and not with the app](https://py.processing.org/tutorials/command-line/) it seems I need a [special version](https://github.com/processing/processing/wiki/Build-Instructions#mac-os-x-notes) of java. Namely: JDK 8u202. Because on Oracle I need to make an account and it all seems very involved, I am asking ChatGPT and install java via my terminal directly with this command lines: 
+for running [processing](https://py.processing.org/) in my [command line/ my own terminal and not with the app](https://py.processing.org/tutorials/command-line/) it seems I need a [special version](https://github.com/processing/processing/wiki/Build-Instructions#the-quick-version) of java. Namely: JDK 8u202. Because on Oracle I need to make an account and it all seems very involved, I am asking ChatGPT and install java via my terminal directly with this command lines: 
 
 ```
 brew install adoptopenjdk/openjdk/adoptopenjdk8
