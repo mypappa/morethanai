@@ -351,7 +351,7 @@ java -version
 
 ```
 
-seemed to work, it now shows me: 
+it now shows me: 
 
 <img width="522" alt="Screenshot 2023-05-25 at 11 12 31" src="https://github.com/mypappa/morethanai/assets/115219314/99b35019-270d-4e48-9aff-6a3479eb152e">
 
@@ -367,7 +367,7 @@ brew install java
 
 ```
 
-checking again with
+this seems to work, a lot of things are being downloaded. I am checking again with
 
 
 ```
@@ -379,9 +379,7 @@ well, nothing has changed if I check it BUT when I run my code for processing (d
 
 <img width="505" alt="Screenshot 2023-05-25 at 11 25 21" src="https://github.com/mypappa/morethanai/assets/115219314/2d10b4f7-016b-49b1-bfa7-99d5b41ed8f2">
 
-
-
-I download <i>processing.py-3017-macosx</i> and unzip the folder. I create a folder on my desktop and copy paste the file "processing-py.jar" into that folder. Then I open the folder with my text-editor (Visual Code Studio). I create a new file and name it (e.g."mouse_follow.py"). I copy paste a trial code from [processing](https://py.processing.org/tutorials/command-line/)
+I need to download [download](http://py.processing.org/processing.py-macosx.tgz) <i>processing.py-3017-macosx</i> as a standalone version of Processing.py. I do that and unzip the file that has been downloaded to my desktop. I create a new folder on my desktop and name it (e.g."processing-trial") and copy paste ONLY the file "processing-py.jar" frmo the "processing.py-3017-macosx" folder into that "processing-trial"-folder. Then I open the "processing-trial"-folder with my text-editor (Visual Code Studio). I create a new file and name it (e.g."mouse_follow.py"). I copy paste a trial code from [processing](https://py.processing.org/tutorials/command-line/) in that file.
 
 ```
 def setup():
@@ -394,16 +392,17 @@ def draw():
 
 ```
 
-and I try to run it:
+and then I try to run it:
 ```
 java -jar processing-py.jar mouse_follow.py
 
 ```
 
-this should appear now, and when I move the mouse in that window, the black circle should be moving around.
+It works, a window pops up in which when my mouse is overing above it, a black circle appears. It should look like this, and when I move the mouse in that window, the black circle should be moving around.
 
 <img width="1122" alt="Screenshot 2023-05-25 at 11 21 47" src="https://github.com/mypappa/morethanai/assets/115219314/68d3a099-05a7-4e07-85a5-220a5779cf66">
 
+great. Let me find some interesting things to play with now. 
 
 
 ## References:
