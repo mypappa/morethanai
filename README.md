@@ -353,8 +353,7 @@ java -version
 
 seemed to work, it now shows me: 
 
-<img width="200 alt="Screenshot 2023-05-25 at 11 06 58" src="https://github.com/mypappa/morethanai/assets/115219314/99455f0b-b139-401e-9db1-6c3ba9413e3d">
-
+<img width="522" alt="Screenshot 2023-05-25 at 11 12 31" src="https://github.com/mypappa/morethanai/assets/115219314/99b35019-270d-4e48-9aff-6a3479eb152e">
 
 
 ## References:
