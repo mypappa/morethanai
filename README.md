@@ -335,6 +335,28 @@ DOES IT WORK NOW??
 aaah and importantly, when you are ready quit! by hitting control c. Otherwies the code runs, the API is in use and you or me or the replit will get langchain error because the API is in ues. 
 
 
+
+### installing java to play with processing:
+
+for running [processing](https://py.processing.org/) in my [command line/ my own terminal and not with the app](https://py.processing.org/tutorials/command-line/) it seems I need a [special version](https://github.com/processing/processing/wiki/Build-Instructions#mac-os-x-notes) of java. Namely: JDK 8u202. Because on Oracle I need to make an account and it all seems very involved, I am asking ChatGPT and install java via my terminal directly with this command lines: 
+
+```
+brew install adoptopenjdk/openjdk/adoptopenjdk8
+
+```
+to check if anf which java version is installed I run:
+
+```
+java -version
+
+```
+
+seemed to work, it now shows me: 
+
+<img width="200 alt="Screenshot 2023-05-25 at 11 06 58" src="https://github.com/mypappa/morethanai/assets/115219314/99455f0b-b139-401e-9db1-6c3ba9413e3d">
+
+
+
 ## References:
 
 • [replit](https://replit.com/~ ); allows programming code in collaboration in an online environment
