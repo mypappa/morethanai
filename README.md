@@ -355,6 +355,20 @@ seemed to work, it now shows me:
 
 <img width="522" alt="Screenshot 2023-05-25 at 11 12 31" src="https://github.com/mypappa/morethanai/assets/115219314/99b35019-270d-4e48-9aff-6a3479eb152e">
 
+I download <i>processing.py-3017-macosx</i> and unzip the folder. I create a folder on my desktop and copy paste the file "processing-py.jar" into that folder. Then I open the folder with my text-editor (Visual Code Studio). I create a new file and name it (e.g."mouse_follow.py"). I copy paste a trial code from [processing](https://py.processing.org/tutorials/command-line/)
+
+```
+[java -version](https://py.processing.org/tutorials/command-line/)
+
+```
+
+and I try to run it:
+```
+java -jar processing-py.jar mouse_follow.py
+
+```
+
+
 
 ## References:
 
