@@ -355,10 +355,42 @@ seemed to work, it now shows me:
 
 <img width="522" alt="Screenshot 2023-05-25 at 11 12 31" src="https://github.com/mypappa/morethanai/assets/115219314/99b35019-270d-4e48-9aff-6a3479eb152e">
 
+but what I need is this:
+
+<img width="527" alt="Screenshot 2023-05-25 at 11 25 43" src="https://github.com/mypappa/morethanai/assets/115219314/04ddd37c-b460-49ec-9a3f-b4fc9d3073f9">
+
+
+so I improvise and run this in my terminal:
+
+```
+brew install java
+
+```
+
+checking again with
+
+
+```
+java -version
+
+```
+
+now it looks like this and when I run my code for processing (down here - just follow what comes next) then it works now when it has not worked previoulsy.
+
+<img width="505" alt="Screenshot 2023-05-25 at 11 25 21" src="https://github.com/mypappa/morethanai/assets/115219314/2d10b4f7-016b-49b1-bfa7-99d5b41ed8f2">
+
+
+
 I download <i>processing.py-3017-macosx</i> and unzip the folder. I create a folder on my desktop and copy paste the file "processing-py.jar" into that folder. Then I open the folder with my text-editor (Visual Code Studio). I create a new file and name it (e.g."mouse_follow.py"). I copy paste a trial code from [processing](https://py.processing.org/tutorials/command-line/)
 
 ```
-[java -version](https://py.processing.org/tutorials/command-line/)
+def setup():
+    size(400, 400)
+
+def draw():
+    background(255)
+    fill(0)
+    ellipse(mouseX, mouseY, 50, 50)
 
 ```
 
@@ -367,6 +399,10 @@ and I try to run it:
 java -jar processing-py.jar mouse_follow.py
 
 ```
+
+this should appear now, and when I move the mouse in that window, the black circle should be moving around.
+
+<img width="1122" alt="Screenshot 2023-05-25 at 11 21 47" src="https://github.com/mypappa/morethanai/assets/115219314/68d3a099-05a7-4e07-85a5-220a5779cf66">
 
 
 
