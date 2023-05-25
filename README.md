@@ -375,7 +375,7 @@ java -version
 
 ```
 
-now it looks like this and when I run my code for processing (down here - just follow what comes next) then it works now when it has not worked previoulsy.
+well, nothing has changed if I check it BUT when I run my code for processing (down here - just follow what comes next) then it works now when it has not worked previoulsy.
 
 <img width="505" alt="Screenshot 2023-05-25 at 11 25 21" src="https://github.com/mypappa/morethanai/assets/115219314/2d10b4f7-016b-49b1-bfa7-99d5b41ed8f2">
 
