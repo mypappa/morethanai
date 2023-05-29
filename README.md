@@ -36,7 +36,7 @@ we want to enable a human and an AI (our vision a visual and text generating AI)
 
 **Visual generating AI:** uses algorithms and models trained on large datasets to create new visual content based on the patterns and information it has learned.
 
-**text generating AI:** uses natural language processing techniques, deep learning models, and language models (@LLMs) trained on large datasets to generate coherent (and relevant) written content-
+**text generating AI:** uses natural language processing techniques, deep learning models, and language models (@LLMs) trained on large datasets to generate coherent (and relevant) written content.
 
 **LLMs:** large language models that are made to understand and generate human-like text. They are trained on large datasets to learn human languages. 
 
@@ -62,7 +62,7 @@ Running code in a **local (on my computer) environment** vs. in an **online envi
 
 #### We installed: 
 
-**OpenAI** (python library): needed to access the OpenAI APIs (interfaces). When having an account to use ChatGPT for example, I can ask for my API key which I need to integrate OpenAI services into my system. In OpenAI I have “tokens” (because it is not open-source anymore) that I need to use the API. If my tokes are used up I can only buy new ones. 
+**OpenAI** (python library): is needed to access the OpenAI APIs (interfaces). When having an account to use ChatGPT for example, I can ask for my API key which I need to integrate OpenAI services into my system. In OpenAI I have “tokens” (because it is not open-source anymore) that I need to use the API. If my tokes are used up I can only buy new ones. 
 
 **Flask** (library): open-source web framework that is written in python. It is like a foundation / structure that helps to make a python code a web application. You can create routes that define how applications are responding to different URLs. It is a way to make a website out of your code. 
 
