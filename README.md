@@ -14,14 +14,16 @@ and the [questions page](https://more-than-i--stella-dikmans.repl.co/questions)
      
 
 ## concept  
-we wonder..  
+the interactive installation investigates potentialities of diversifying narratives (about presents, pasts and futures) by initiating a collective storytelling that transcends into a ‘more-than-human’ space. An AI-Language Model starts to generate a story, constantly asking questions to the public. The AI-Language Model incorporates the public's responses into the story and thus begins to weave multiple human inputs into an imaginary narrative. **The project aims to embody the ways in which AI-tools affect the creation of collective storytelling.** In 2023, while OpenAI has found its way into mainstream media, this research is a response aiming to understand the impact of integrating AI-tools into collective storytelling practices. A critical engagement with AI-tools and the (social) structures underlying human-machine interactions and outcomes seems crucial at a time when users are often left without an understanding of the internal processes and thus without agency. Even though we live in the age of information and polyphony, few voices are being noticed; few stories are being created. Stories are fiction and they are not; they are speculation yet inherently bear reflection. Anna Tsing talks about stories as forms of ‘attunement’ to the worlds we find ourselves in, which means we have agency to make decisions: What stories do we listen to? What channels do we use to tell and who is telling? In our individualistic societies ancestral and collective knowledges are often undermined by a personified genius. The installation questions notions about individual creation as well as human exclusivity in creative (artistic) expression. 
+
+guiding questions:  
 - What happens if we revert the roles between the users and the servers?  
 - How can I become the assistant of an AI? then who is the master of whom?  
+- what happens if we expand a ‘human collective’ with an ‘artificial’ intelligence?
 
-this project aims to materialise and embody the ways in which artificial intelligences (AI) affect the creation of stories and how human inputs together with nonhuman processing (AI) give us a **more-than-human outcome**.   
 
 ## hands-on  
-we have created an interface that records speech, transcribes it to text and feeds it into a language model (which in this case is GPT). Then the AI starts generating a story. The story always ends with a question to the participants for new human input. The answer is then integrated to the story from the AI, live-projected and ends with another question. this continues until we reach an x amount of words
+the interface records speech, transcribes it to text and feeds it into a language model (which in this case is GPT). Then the AI-tools starts generating a story. The story always ends with a question that is posed to the participants in a written prompt. Human participants can answer that question by speaking into a microphone. The answer is then integrated to the story from the AI-tool and the emerging story is being projected in real-time. The questions appear on a screen next to the projection which gives participants the chance to answer with ease and follow the story without interruption. 
 
 ## What we did (and did not do(ourselves)) in technical terms. 
 knowing relatively nothing about coding and how to build *digital interfaces* was an interesting starting point for our project “more thAn I” that includes a complex structure of code and *(strange)* languages. With a lot of help we made our scaffold and now can work on a understandable set up without relying on the many knowledgeable minds that guided us till this point. **Great thanks** to **Jana, Tatiana** who conceptually guided us and to the our programmers **Pietro, Mikel, Xavier, Victor,** and **Aurel** *(@FabLab, we know you know BUT woman power is definitely needed here!)*
